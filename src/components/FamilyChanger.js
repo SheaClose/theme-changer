@@ -8,15 +8,23 @@ export default class FamilyChanger extends Component {
     };
   }
 
-  // componentWillReceiveProps
-
+  componentWillReceiveProps({ allowEdit }) {
+    this.setState({ allowEdit });
+  }
+  changeFontFamily(e) {
+    this.props.changeFontFamily(e.target.value);
+  }
   render() {
     return (
-      <select className="dropDownContainer">
+      <select
+        disabled={!this.state.allowEdit}
+        onChange={e => this.changeFontFamily(e)}
+        className="dropDownContainer"
+      >
         <option value="monospace"> Monospace </option>
         <option value="arial"> Arial </option>
-        <option value="courier"> Courier </option>
+        <option value="serif"> Courier </option>
       </select>
-    )
+    );
   }
 }

@@ -1,33 +1,3 @@
-<img src="https://devmounta.in/img/logowhiteblue.png" width="250" align="right">
-
-# Project Summary
-
-In this project we will create an application that can change the theme of a paragraph real-time using elements on the front-end. We will also create a switch that can enable and disable the ability to change the theme of the paragraph. In the process of creating this project, we will cover how to use `this`, `bind`, `state`, `props`, and `componentWillReceiveProps`.
-
-You can find a finished live example <a href="https://devmountain.github.io/theme-changer/">here</a>.
-
-<img src="https://github.com/DevMountain/theme-changer/blob/solution/readme/1.png" />
-
-## Setup
-
-* `fork` and `clone` this repository.
-* `cd` into the project directory.
-* Run `npm install`.
-* Run `npm start` after `npm install` has finished.
-
-<img src="https://github.com/DevMountain/theme-changer/blob/solution/readme/2.png" />
-
-## Step 1
-
-### Summary
-
-In this step, we will create the initial state for `src/App.js`. On this state object, we will keep track of the initial theme values and if the theme is allowed to be edited.
-
-### Instructions
-
-* Open `src/App.js`.
-* Create a `constructor` method where it says `// constructor`:
-  * This method should call `super()`.
   * This method should create an initial state object with the following properties:
     * fontColor: 'black'
     * fontSize: 12,
@@ -95,7 +65,7 @@ export default App;
 
 ### Summary
 
-In this step, we will create class methods in `src/App.js` to update `fontColor`, `fontSize`, `fontFamily`, and `allowEdit` on state. 
+In this step, we will create class methods in `src/App.js` to update `fontColor`, `fontSize`, `fontFamily`, and `allowEdit` on state.
 
 ### Instructions
 
@@ -338,7 +308,7 @@ class App extends Component {
           <FamilyChanger update={ this.updateFamily } allowEdit={ this.state.allowEdit } />
         </div>
         <div className="textArea">
-          <TextContainer 
+          <TextContainer
             fontColor={ this.state.fontColor }
             fontSize={ this.state.fontSize }
             fontFamily={ this.state.fontFamily } />
@@ -367,9 +337,9 @@ In this step, we will update our `select` elements in the `EditToggle`, `ColorCh
 
 * Open `EditToggle`, `ColorChanger.js`, `FamilyChanger.js`, and `SizeChanger.js` from `src/components/`.
 * Locate the `select` tag, in all four files, and add an `onChange` prop:
-  * The `onChange` should use an arrow function to capture the `event`. 
+  * The `onChange` should use an arrow function to capture the `event`.
   * Inside the arrow function call the `update` prop with the value of the target from the `event`.
-  * Parse Int the value of the target when in `SizeChanger.js`. 
+  * Parse Int the value of the target when in `SizeChanger.js`.
 * Locate the `select` tag, in `ColorChanger`, `FamilyChanger`, and `SizeChanger`, and add a `disabled` prop:
   * The `select` element should be `disabled` if `allowEdit` on <b>state</b> is equal to `"false"`.
 
